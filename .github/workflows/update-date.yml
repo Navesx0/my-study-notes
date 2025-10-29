@@ -20,7 +20,7 @@ jobs:
     - name: Update date in README
       run: |
         CURRENT_DATE=$(date +"%d/%m/%Y")
-        sed -i "s/📄 Atualizado em: .*/📄 Atualizado em: $CURRENT_DATE/" README.md
+        sed -i "s#📄 Atualizado em: .*#📄 Atualizado em: $CURRENT_DATE#" README.md
         
     - name: Commit and push if changed
       run: |
