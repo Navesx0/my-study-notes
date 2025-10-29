@@ -1,0 +1,31 @@
+name: Update Last Modified Date
+
+on:
+  push:
+    branches: [ main, master ]
+  schedule:
+    # Atualiza diariamente às 08:00 UTC
+    - cron: '0 8 * * *'
+
+jobs:
+  update-date:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      
+    - name: Update date in README
+      run: |
+        CURRENT_DATE=$(date +"%d/%m/%Y")
+        sed -i "s/📄 Atualizado em: .*/📄 Atualizado em: $CURRENT_DATE/" README.md
+        
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git diff --staged --quiet || git commit -m "📅 Atualiza data automática: $(date +'%d/%m/%Y')"
+        git push
