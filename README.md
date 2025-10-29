@@ -4,7 +4,7 @@ Repositório para centralizar todas as minhas anotações e materiais de estudo 
 
 ## 🗂️ Estrutura do Repositório
 
-├── GitHub/
+├── GitHub/  
 └── DevOps/
 
 ## 📖 Índice de Estudos
