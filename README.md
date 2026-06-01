@@ -17,4 +17,4 @@ Repositório para centralizar todas as minhas anotações e materiais de estudo 
 
 ---
 
-*📄 Atualizado em: 31/05/2026
+*📄 Atualizado em: 01/06/2026
